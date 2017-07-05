@@ -4,7 +4,7 @@ net_mon is a C program that monitors network usage and displays them on a 32x16 
 Tested and deployed on a Rasbperry Pi 2 model B under Raspbian 7 (wheezy).
 
 ## Installation
-Compilation is donw with the following commands
+Compilation is done with the following commands
 
 ```
 make lib
