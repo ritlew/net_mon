@@ -3,8 +3,9 @@
 #include <math.h>
 #include <signal.h>
 #include <pthread.h>
-#include "ledmat.h"
 #include <wiringPi.h>
+
+#include "ledutil.h"
 
 // Contant pins
 // variables are named after pin names on the schematic

@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include <ledmat.h>
+
+#include "ledutil.h"
 #include "mon.h"
 
 // main program
