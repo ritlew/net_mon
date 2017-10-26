@@ -1,15 +1,15 @@
-make:
-	gcc net_mon.c mon.c -o net_mon -lledmat
+CC = gcc
+c_flags = -Wall -pedantic
+libs = -lwiringPi -lpthread
 
-run:
-	sudo ./net_mon
+all: src/net_mon.c netutil ledutil
+	$(CC) src/net_mon.c mon.o ledutil.o -o net_mon $(libs)
 
-lib:
-	gcc -shared -o ledmat.so ledmat.c -lwiringPi -lpthread
-	ar -cvq ledmat.a ledmat.so
+netutil: src/netutil.c src/netutil.h
+	$(CC) -c src/netutil.c $(c_flags)
 
-install_lib:
-	sudo mv ledmat.a /usr/local/lib/libledmat.a
+ledutil: src/ledutil.h src/ledutil.c
+	$(CC) -c src/ledutil.c $(c_flags)
 
 clean:
-	rm -f ledmat.a ledmat.so
+	rm *.o net_mon
